@@ -88,27 +88,6 @@ class ViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		//Adjust font size of buttons
-		if let scoreLeftLabel = scoreLeft.titleLabel{
-			scoreLeftLabel.minimumScaleFactor = 0.1
-			scoreLeftLabel.adjustsFontSizeToFitWidth = true
-		}
-		
-		if let scoreRightLabel = scoreRight.titleLabel{
-			scoreRightLabel.minimumScaleFactor = 0.1
-			scoreRightLabel.adjustsFontSizeToFitWidth = true
-		}
-		
-		if let gameLeftLabel = gameLeft.titleLabel{
-			gameLeftLabel.minimumScaleFactor = 0.1
-			gameLeftLabel.adjustsFontSizeToFitWidth = true
-		}
-		
-		if let gameRightLabel = gameRight.titleLabel{
-			gameRightLabel.minimumScaleFactor = 0.1
-			gameRightLabel.adjustsFontSizeToFitWidth = true
-		}
-		
 		//Initialize the view
 		refresh()
 	}
