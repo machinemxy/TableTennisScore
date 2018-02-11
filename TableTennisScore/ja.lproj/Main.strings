@@ -1,0 +1,27 @@
+
+/* Class = "UIButton"; normalTitle = "98"; ObjectID = "0tr-JO-h8N"; */
+"0tr-JO-h8N.normalTitle" = "98";
+
+/* Class = "UILabel"; text = "Serve"; ObjectID = "A7A-cH-cx5"; */
+"A7A-cH-cx5.text" = "サーブ";
+
+/* Class = "UIButton"; normalTitle = "Reset"; ObjectID = "ItP-PC-VTK"; */
+"ItP-PC-VTK.normalTitle" = "リセット";
+
+/* Class = "UILabel"; text = "Serve"; ObjectID = "JXM-Ti-amf"; */
+"JXM-Ti-amf.text" = "サーブ";
+
+/* Class = "UIButton"; normalTitle = "9"; ObjectID = "Rjm-r7-ImT"; */
+"Rjm-r7-ImT.normalTitle" = "9";
+
+/* Class = "UIButton"; normalTitle = "8"; ObjectID = "XBv-Vg-Dl3"; */
+"XBv-Vg-Dl3.normalTitle" = "8";
+
+/* Class = "UIButton"; normalTitle = "Rewind"; ObjectID = "fnc-UY-Rnx"; */
+"fnc-UY-Rnx.normalTitle" = "直し";
+
+/* Class = "UIButton"; normalTitle = "99"; ObjectID = "wxw-f7-ZLY"; */
+"wxw-f7-ZLY.normalTitle" = "99";
+
+/* Class = "UIButton"; normalTitle = "Change Side"; ObjectID = "x8F-zp-Utg"; */
+"x8F-zp-Utg.normalTitle" = "サイドチェンジ";

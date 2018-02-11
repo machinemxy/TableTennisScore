@@ -106,8 +106,8 @@ class ViewController: UIViewController {
 	}
 	
 	func gameSet(){
-		let alertController = UIAlertController(title: "Game Set", message: "", preferredStyle: .alert)
-		let alertAction = UIAlertAction(title: "OK", style: .default, handler: {(_: UIAlertAction) -> Void in self.refresh()})
+		let alertController = UIAlertController(title: NSLocalizedString("Game Set", comment: ""), message: "", preferredStyle: .alert)
+		let alertAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: {(_: UIAlertAction) -> Void in self.refresh()})
 		alertController.addAction(alertAction)
 		self.present(alertController, animated: true, completion: nil)
 	}
