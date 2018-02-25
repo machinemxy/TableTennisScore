@@ -9,9 +9,15 @@
 import UIKit
 
 class ThemeTableViewController: UITableViewController {
-
+	var themeRows: [ThemeRow] = []
+	
     override func viewDidLoad() {
         super.viewDidLoad()
+		
+		//generate the themeRows
+		for i in 0 ..< ThemeRow.rowCount {
+			themeRows.append(ThemeRow(themeId: i))
+		}
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -28,24 +34,30 @@ class ThemeTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return themeRows.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "themeCell", for: indexPath)
+		
+		cell.textLabel?.text = themeRows[indexPath.row].themeName
 
         return cell
     }
-    */
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier != "themeDetailSegue" {
+			return
+		}
+		
+		let indexPath = tableView.indexPathForSelectedRow!
+		let themeDetailViewController = segue.destination as! ThemeDetailViewController
+		themeDetailViewController.themeId = indexPath.row
+	}
 
     /*
     // Override to support conditional editing of the table view.

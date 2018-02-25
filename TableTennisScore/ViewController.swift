@@ -30,6 +30,8 @@ class ViewController: UIViewController {
 	
 	@IBOutlet weak var btnRestartMatch: UIButton!
 	
+	@IBOutlet weak var btnSetting: UIButton!
+	
 	@IBAction func rewind(_ sender: Any) {
 		players = historyPlayers
 		refresh()
@@ -83,6 +85,15 @@ class ViewController: UIViewController {
 			resetForNextGame()
 			gameSet()
 		}
+	}
+	
+	@IBAction func unwindFromSetting(segue: UIStoryboardSegue) {
+		if segue.identifier != "applySegue" {
+			return
+		}
+		
+		let themeDetailViewController = segue.source as! ThemeDetailViewController
+		UserDefaults.standard.set(themeDetailViewController.themeId, forKey: "themeId")
 	}
 	
 	override func viewDidLoad() {
@@ -150,6 +161,31 @@ class ViewController: UIViewController {
 			players.1.serveFirst = false
 			players.1.remainServe = 0
 		}
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		let themeId = UserDefaults.standard.integer(forKey: "themeId")
+		let theme = Theme(themeId: themeId)
+		setTheme(theme: theme)
+	}
+	
+	func setTheme(theme: Theme) {
+		view.backgroundColor = theme.backgroundColor
+		
+		scoreLeft.setTitleColor(theme.buttonColor, for: .normal)
+		scoreRight.setTitleColor(theme.buttonColor, for: .normal)
+		gameLeft.setTitleColor(theme.buttonColor, for: .normal)
+		gameRight.setTitleColor(theme.buttonColor, for: .normal)
+		btnRewind.setTitleColor(theme.buttonColor, for: .normal)
+		btnChangeSide.setTitleColor(theme.buttonColor, for: .normal)
+		btnRestartMatch.setTitleColor(theme.importantButtonColor, for: .normal)
+		
+		serveLeft.textColor = theme.labelColor
+		serveRight.textColor = theme.labelColor
+		
+		btnSetting.setImage(theme.settingIcon, for: .normal)
 	}
 }
 

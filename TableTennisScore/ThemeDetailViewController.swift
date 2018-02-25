@@ -9,11 +9,15 @@
 import UIKit
 
 class ThemeDetailViewController: UIViewController {
+	var themeId: Int = 0
 
-    override func viewDidLoad() {
+	@IBOutlet weak var imageView: UIImageView!
+	
+	override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+		imageView.image = ThemeRow(themeId: themeId).getPreview()
     }
 
     override func didReceiveMemoryWarning() {
