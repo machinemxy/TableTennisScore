@@ -14,6 +14,7 @@
 		2292E1921FEBE4C5001524FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2292E1901FEBE4C5001524FB /* Main.storyboard */; };
 		2292E1971FEBE4C5001524FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2292E1951FEBE4C5001524FB /* LaunchScreen.storyboard */; };
 		2292E19F1FEFBC7F001524FB /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2292E19E1FEFBC7F001524FB /* Player.swift */; };
+		22EBE96D204588A000417239 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EBE96C204588A000417239 /* StoreKit.framework */; };
 		22F6A01120426C0D0063FDC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22F6A01020426C0D0063FDC6 /* Assets.xcassets */; };
 		22F6A01320426F130063FDC6 /* ThemeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F6A01220426F130063FDC6 /* ThemeTableViewController.swift */; };
 		22F6A018204270D60063FDC6 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F6A017204270D60063FDC6 /* Theme.swift */; };
@@ -39,6 +40,7 @@
 		2292E1961FEBE4C5001524FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2292E1981FEBE4C5001524FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2292E19E1FEFBC7F001524FB /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		22EBE96C204588A000417239 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		22F6A01020426C0D0063FDC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22F6A01220426F130063FDC6 /* ThemeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeTableViewController.swift; sourceTree = "<group>"; };
 		22F6A017204270D60063FDC6 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22EBE96D204588A000417239 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +65,7 @@
 			children = (
 				2292E18B1FEBE4C5001524FB /* TableTennisScore */,
 				2292E18A1FEBE4C5001524FB /* Products */,
+				22EBE96B204588A000417239 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,6 +95,14 @@
 				22F6A01920427F5D0063FDC6 /* ThemeRow.swift */,
 			);
 			path = TableTennisScore;
+			sourceTree = "<group>";
+		};
+		22EBE96B204588A000417239 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				22EBE96C204588A000417239 /* StoreKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +138,11 @@
 					2292E1881FEBE4C5001524FB = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};

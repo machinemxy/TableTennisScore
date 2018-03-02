@@ -258,41 +258,70 @@
                                         <rect key="frame" x="0.0" y="0.0" width="284" height="288"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="nVF-QT-zE9">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="nBO-Da-BHb">
                                         <rect key="frame" x="284" y="0.0" width="284" height="288"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m5X-nY-IU6">
-                                                <rect key="frame" x="0.0" y="0.0" width="284" height="144"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XLx-Cp-S2u">
-                                                <rect key="frame" x="0.0" y="144" width="284" height="144"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mDX-CG-ACn">
+                                                <rect key="frame" x="0.0" y="0.0" width="284" height="288"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1du-ji-fDg">
-                                                        <rect key="frame" x="116.5" y="8" width="51" height="36"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pc5-wj-JJo">
+                                                        <rect key="frame" x="0.0" y="0.0" width="284" height="96"/>
                                                         <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="S8r-Ot-btj">
-                                                                <rect key="frame" x="0.0" y="0.0" width="51" height="36"/>
-                                                                <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WfH-D1-vJN">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="51" height="36"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                                        <state key="normal" title="Apply"/>
-                                                                        <connections>
-                                                                            <segue destination="AJa-Fi-sVD" kind="unwind" identifier="applySegue" unwindAction="unwindFromSettingWithSegue:" id="P3p-GK-Rvu"/>
-                                                                        </connections>
-                                                                    </button>
-                                                                </subviews>
-                                                            </stackView>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pYj-4w-Tkt">
+                                                                <rect key="frame" x="101" y="52" width="82" height="36"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <state key="normal" title="Purchase"/>
+                                                                <connections>
+                                                                    <action selector="purchaseClicked:" destination="pB9-g0-dAx" eventType="touchUpInside" id="APv-cl-NmA"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
-                                                    </stackView>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="pYj-4w-Tkt" firstAttribute="centerX" secondItem="pc5-wj-JJo" secondAttribute="centerX" id="TzM-Rd-79R"/>
+                                                            <constraint firstAttribute="bottom" secondItem="pYj-4w-Tkt" secondAttribute="bottom" constant="8" id="UnS-xe-Qvd"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ma4-eF-5l1">
+                                                        <rect key="frame" x="0.0" y="96" width="284" height="96"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GVA-en-Rx9" userLabel="Restore Purchases">
+                                                                <rect key="frame" x="61" y="8" width="162" height="36"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <state key="normal" title="Restore Purchases"/>
+                                                                <connections>
+                                                                    <action selector="restoreClicked:" destination="pB9-g0-dAx" eventType="touchUpInside" id="nmg-wC-zco"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="GVA-en-Rx9" firstAttribute="centerX" secondItem="ma4-eF-5l1" secondAttribute="centerX" id="oLf-ro-TpP"/>
+                                                            <constraint firstItem="GVA-en-Rx9" firstAttribute="top" secondItem="ma4-eF-5l1" secondAttribute="top" constant="8" id="uV8-sA-Tdi"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6tB-gB-Z0j">
+                                                        <rect key="frame" x="0.0" y="192" width="284" height="96"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WfH-D1-vJN">
+                                                                <rect key="frame" x="116" y="30" width="51" height="36"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <state key="normal" title="Apply"/>
+                                                                <connections>
+                                                                    <segue destination="AJa-Fi-sVD" kind="unwind" identifier="applySegue" unwindAction="unwindFromSettingWithSegue:" id="P3p-GK-Rvu"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="WfH-D1-vJN" firstAttribute="centerX" secondItem="6tB-gB-Z0j" secondAttribute="centerX" id="R4Z-U2-5pR"/>
+                                                            <constraint firstItem="WfH-D1-vJN" firstAttribute="centerY" secondItem="6tB-gB-Z0j" secondAttribute="centerY" id="cHj-xW-Aax"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstItem="1du-ji-fDg" firstAttribute="centerX" secondItem="XLx-Cp-S2u" secondAttribute="centerX" id="79R-8V-baB"/>
-                                                    <constraint firstItem="WfH-D1-vJN" firstAttribute="top" secondItem="XLx-Cp-S2u" secondAttribute="top" constant="8" id="IFu-ZX-jli"/>
-                                                </constraints>
-                                            </view>
+                                            </stackView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -308,6 +337,9 @@
                         <viewLayoutGuide key="safeArea" id="NVQ-1s-ip6"/>
                     </view>
                     <connections>
+                        <outlet property="btnApply" destination="WfH-D1-vJN" id="5LU-s9-8Z2"/>
+                        <outlet property="btnPurchase" destination="pYj-4w-Tkt" id="K7q-js-hSZ"/>
+                        <outlet property="btnRestore" destination="GVA-en-Rx9" id="gtm-yQ-HMi"/>
                         <outlet property="imageView" destination="mHe-Zx-5eT" id="dOP-Zd-tde"/>
                     </connections>
                 </viewController>
