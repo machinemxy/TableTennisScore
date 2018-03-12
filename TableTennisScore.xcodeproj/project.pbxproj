@@ -32,6 +32,7 @@
 		22658FCD202FE48E0061B220 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		22658FCE202FE4900061B220 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		22658FCF202FE4910061B220 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		228BBBBF2056C845006952C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2292E1891FEBE4C5001524FB /* TableTennisScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableTennisScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2292E18C1FEBE4C5001524FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2292E18E1FEBE4C5001524FB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -204,6 +205,7 @@
 				22658FBE202FD9050061B220 /* ja */,
 				22658FBF202FD9060061B220 /* zh-Hans */,
 				22658FC0202FDAF00061B220 /* Base */,
+				228BBBBF2056C845006952C3 /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
