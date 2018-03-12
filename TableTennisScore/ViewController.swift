@@ -92,6 +92,7 @@ class ViewController: UIViewController {
 			return
 		}
 		
+		//Save the theme user selected
 		let themeDetailViewController = segue.source as! ThemeDetailViewController
 		UserDefaults.standard.set(themeDetailViewController.themeId, forKey: "themeId")
 	}
@@ -167,7 +168,7 @@ class ViewController: UIViewController {
 		super.viewWillAppear(animated)
 		
 		let themeId = UserDefaults.standard.integer(forKey: "themeId")
-		let theme = Theme(themeId: themeId)
+		let theme = ThemeController.getTheme(themeId: themeId)
 		setTheme(theme: theme)
 	}
 	

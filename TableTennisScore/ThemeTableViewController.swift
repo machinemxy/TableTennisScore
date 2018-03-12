@@ -9,15 +9,9 @@
 import UIKit
 
 class ThemeTableViewController: UITableViewController {
-	var themeRows: [ThemeRow] = []
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		
-		//generate the themeRows
-		for i in 0 ..< ThemeRow.rowCount {
-			themeRows.append(ThemeRow(themeId: i))
-		}
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -38,13 +32,13 @@ class ThemeTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return themeRows.count
+        return ThemeController.rowCount
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "themeCell", for: indexPath)
 		
-		cell.textLabel?.text = themeRows[indexPath.row].themeName
+		cell.textLabel?.text = ThemeController.getThemeName(themeId: indexPath.row)
 
         return cell
     }
@@ -54,6 +48,7 @@ class ThemeTableViewController: UITableViewController {
 			return
 		}
 		
+		//Preparation work before segue to ThemeDetailView
 		let indexPath = tableView.indexPathForSelectedRow!
 		let themeDetailViewController = segue.destination as! ThemeDetailViewController
 		themeDetailViewController.themeId = indexPath.row

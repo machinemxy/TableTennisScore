@@ -30,7 +30,7 @@ class ThemeDetailViewController: UIViewController{
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-		imageView.image = ThemeRow(themeId: themeId).getPreview()
+		imageView.image = ThemeController.getPreview(themeId: themeId)
     }
 
     override func didReceiveMemoryWarning() {
