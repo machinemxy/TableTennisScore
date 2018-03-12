@@ -9,9 +9,8 @@
 import UIKit
 import StoreKit
 
-class ThemeDetailViewController: UIViewController, SKProductsRequestDelegate, SKPaymentTransactionObserver {
+class ThemeDetailViewController: UIViewController{
 	var themeId: Int = 0
-	var products = [SKProduct]()
 
 	@IBOutlet weak var imageView: UIImageView!
 	@IBOutlet weak var btnPurchase: UIButton!
@@ -20,12 +19,7 @@ class ThemeDetailViewController: UIViewController, SKProductsRequestDelegate, SK
 	
 	
 	@IBAction func purchaseClicked(_ sender: Any) {
-		for product in products {
-			let prodId = product.productIdentifier
-			if(prodId == "theme1") {
-				buyProduct(product: product)
-			}
-		}
+
 	}
 	
 	@IBAction func restoreClicked(_ sender: Any) {
@@ -37,64 +31,12 @@ class ThemeDetailViewController: UIViewController, SKProductsRequestDelegate, SK
 
         // Do any additional setup after loading the view.
 		imageView.image = ThemeRow(themeId: themeId).getPreview()
-		
-		if(SKPaymentQueue.canMakePayments()) {
-			let productIds = NSSet(object: "theme1") as! Set<String>
-			let request = SKProductsRequest(productIdentifiers: productIds)
-			request.delegate = self
-			request.start()
-		} else {
-			print("please enable IAPs")
-		}
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-	
-	func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-		for product in response.products {
-			print(product.productIdentifier)
-			print(product.localizedTitle)
-			print(product.localizedDescription)
-			print(product.price)
-			products.append(product)
-		}
-	}
-	
-	func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
-		print("transaction restored")
-		for transaction in queue.transactions {
-			if let identifier = transaction.transactionIdentifier {
-				print(identifier)
-			}
-		}
-	}
-	
-	func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
-		for transaction in transactions {
-			switch transaction.transactionState {
-			case .purchased:
-				print("ok")
-				if let identifier = transaction.transactionIdentifier {
-					print(identifier)
-				}
-			case .failed:
-				print("failed")
-			default:
-				print("default")
-			}
-		}
-	}
-
-	func buyProduct(product: SKProduct) {
-		print("buy" + product.productIdentifier)
-		let pay = SKPayment(product: product)
-		SKPaymentQueue.default().add(self)
-		SKPaymentQueue.default().add(pay)
-		
-	}
 	
     /*
     // MARK: - Navigation
