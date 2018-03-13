@@ -8,6 +8,7 @@
 
 import UIKit
 import StoreKit
+import SwiftyStoreKit
 
 class ThemeDetailViewController: UIViewController{
 	var themeId: Int = 0
@@ -29,14 +30,54 @@ class ThemeDetailViewController: UIViewController{
 	override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        //Show theme image
 		imageView.image = ThemeController.getPreview(themeId: themeId)
+		
+		//According to the purchase situation, set the ability of buttons
+		let purchaseId = ThemeController.getThemePurchaseId(themeId: themeId)
+		if purchaseId == "" {
+			//free theme
+			btnPurchase.isEnabled = false
+			btnRestore.isEnabled = false
+		} else {
+			//set the price of the theme
+			setPrice(purchaseId: purchaseId)
+			
+			if isPurchased(purchaseId: purchaseId) {
+				//user has bought it
+				btnPurchase.isEnabled = false
+				btnRestore.isEnabled = false
+			} else {
+				//user has not bought it
+				btnApply.isEnabled = false
+			}
+		}
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+	
+	func isPurchased(purchaseId: String) -> Bool {
+		return UserDefaults.standard.bool(forKey: purchaseId)
+	}
+	
+	func setPrice(purchaseId: String) {
+		SwiftyStoreKit.retrieveProductsInfo([purchaseId]) { result in
+			if let product = result.retrievedProducts.first {
+				var purchaseTitle = NSLocalizedString("Purchase for @", comment: "")
+				let priceString = product.localizedPrice!
+				purchaseTitle = purchaseTitle.replacingOccurrences(of: "@", with: priceString)
+				self.btnPurchase.setTitle(purchaseTitle, for: .normal)
+				print("Product: \(product.localizedTitle), price: \(priceString)")
+			} else if let invalidProductId = result.invalidProductIDs.first {
+				print("Invalid product identifier: \(invalidProductId)")
+			} else {
+				print("Error")
+			}
+		}
+	}
 	
     /*
     // MARK: - Navigation

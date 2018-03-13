@@ -36,4 +36,13 @@ struct ThemeController {
 			return #imageLiteral(resourceName: "theme-default")
 		}
 	}
+	
+	static func getThemePurchaseId(themeId: Int) -> String {
+		switch themeId {
+		case 2:
+			return "theme1"
+		default:
+			return ""
+		}
+	}
 }

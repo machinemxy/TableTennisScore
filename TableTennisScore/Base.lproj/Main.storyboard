@@ -270,7 +270,6 @@
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pYj-4w-Tkt">
                                                                 <rect key="frame" x="101" y="52" width="82" height="36"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                                <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Purchase"/>
                                                                 <connections>
                                                                     <action selector="purchaseClicked:" destination="pB9-g0-dAx" eventType="touchUpInside" id="APv-cl-NmA"/>
@@ -289,7 +288,6 @@
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GVA-en-Rx9" userLabel="Restore Purchases">
                                                                 <rect key="frame" x="61" y="8" width="162" height="36"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                                <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Restore Purchases"/>
                                                                 <connections>
                                                                     <action selector="restoreClicked:" destination="pB9-g0-dAx" eventType="touchUpInside" id="nmg-wC-zco"/>
