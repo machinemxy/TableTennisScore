@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		223DE67720580A700085AE4E /* SwiftyStoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223DE67620580A700085AE4E /* SwiftyStoreKit.framework */; };
 		22658FBB202FD9010061B220 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22658FBD202FD9010061B220 /* Localizable.strings */; };
 		22658FCA202FE4570061B220 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22658FCC202FE4570061B220 /* InfoPlist.strings */; };
 		2292E18D1FEBE4C5001524FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2292E18C1FEBE4C5001524FB /* AppDelegate.swift */; };
@@ -23,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		223DE673205807FA0085AE4E /* SwiftyStoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyStoreKit.framework; path = ../CarthageLibrary/Carthage/Build/iOS/SwiftyStoreKit.framework; sourceTree = "<group>"; };
+		223DE67620580A700085AE4E /* SwiftyStoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyStoreKit.framework; path = Carthage/Build/iOS/SwiftyStoreKit.framework; sourceTree = "<group>"; };
 		22658FB3202FCFDB0061B220 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		22658FB4202FD7AA0061B220 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		22658FBE202FD9050061B220 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -53,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				223DE67720580A700085AE4E /* SwiftyStoreKit.framework in Frameworks */,
 				22EBE96D204588A000417239 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,6 +104,8 @@
 		22EBE96B204588A000417239 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				223DE673205807FA0085AE4E /* SwiftyStoreKit.framework */,
+				223DE67620580A700085AE4E /* SwiftyStoreKit.framework */,
 				22EBE96C204588A000417239 /* StoreKit.framework */,
 			);
 			name = Frameworks;
@@ -115,6 +121,7 @@
 				2292E1851FEBE4C5001524FB /* Sources */,
 				2292E1861FEBE4C5001524FB /* Frameworks */,
 				2292E1871FEBE4C5001524FB /* Resources */,
+				223DE675205808180085AE4E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -180,6 +187,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		223DE675205808180085AE4E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)//Carthage/Build/iOS/SwiftyStoreKit.framework",
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftyStoreKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n/usr/local/bin/carthage outdated --xcode-warnings";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2292E1851FEBE4C5001524FB /* Sources */ = {
@@ -357,6 +382,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EQC88F8HW8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TableTennisScore/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mxy.TableTennisScore;
@@ -372,6 +401,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EQC88F8HW8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TableTennisScore/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mxy.TableTennisScore;
