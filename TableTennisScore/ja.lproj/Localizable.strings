@@ -11,3 +11,8 @@
 "Dark" = "ダーク";
 "Spring Festival" = "春節";
 "Purchase for @" = "@で購入";
+"Purchase Succeeded" = "購入成功";
+"Purchase Failed" = "購入失敗";
+"Restore Succeeded" = "復元成功";
+"Restore Failed" = "復元失敗";
+"Nothing to Restore" = "復元できるものはありません";

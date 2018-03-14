@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StoreKit
 
 class ViewController: UIViewController {
 	var players = (Player(serveFirst: true), Player(serveFirst: false))
@@ -118,6 +119,14 @@ class ViewController: UIViewController {
 	}
 	
 	func gameSet(){
+		//user use it every 10 time, he will be asked to rate and review
+		var gamePlayed = UserDefaults.standard.integer(forKey: "gamePlayed")
+		gamePlayed += 1
+		UserDefaults.standard.set(gamePlayed, forKey: "gamePlayed")
+		if gamePlayed % 10 == 0 {
+			SKStoreReviewController.requestReview()
+		}
+		
 		let alertController = UIAlertController(title: NSLocalizedString("Game Set", comment: ""), message: "", preferredStyle: .alert)
 		let alertAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: {(_: UIAlertAction) -> Void in self.refresh()})
 		alertController.addAction(alertAction)

@@ -10,4 +10,9 @@
 "Default" = "默认";
 "Dark" = "黑暗";
 "Spring Festival" = "春节";
-"Purchase for @" = "以@的价格购买";
+"Purchase for @" = "以@的价格购入";
+"Purchase Succeeded" = "购入成功";
+"Purchase Failed" = "购入失败";
+"Restore Succeeded" = "恢复成功";
+"Restore Failed" = "恢复失败";
+"Nothing to Restore" = "无可恢复之物";

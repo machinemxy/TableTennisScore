@@ -11,3 +11,8 @@
 "Dark" = "Dark";
 "Spring Festival" = "Spring Festival";
 "Purchase for @" = "Purchase for @";
+"Purchase Succeeded" = "Purchase Succeeded";
+"Purchase Failed" = "Purchase Failed";
+"Restore Succeeded" = "Restore Succeeded";
+"Restore Failed" = "Restore Failed";
+"Nothing to Restore" = "Nothing to Restore";

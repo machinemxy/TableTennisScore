@@ -12,6 +12,7 @@ import SwiftyStoreKit
 
 class ThemeDetailViewController: UIViewController{
 	var themeId: Int = 0
+	var purchaseId: String = ""
 
 	@IBOutlet weak var imageView: UIImageView!
 	@IBOutlet weak var btnPurchase: UIButton!
@@ -20,10 +21,37 @@ class ThemeDetailViewController: UIViewController{
 	
 	
 	@IBAction func purchaseClicked(_ sender: Any) {
-
+		SwiftyStoreKit.purchaseProduct(purchaseId, quantity: 1, atomically: true) { result in
+			switch result {
+			case .success:
+				UserDefaults.standard.set(true, forKey: self.purchaseId)
+				self.unlock()
+				//apple already has its own pop up message
+				//self.showSimpleDialog(title: NSLocalizedString("Purchase Succeeded", comment: ""))
+			case .error:
+				self.showSimpleDialog(title: NSLocalizedString("Purchase Failed", comment: ""))
+			}
+		}
 	}
 	
 	@IBAction func restoreClicked(_ sender: Any) {
+		SwiftyStoreKit.restorePurchases(atomically: true) { results in
+			if results.restoreFailedPurchases.count > 0 {
+				self.showSimpleDialog(title: NSLocalizedString("Restore Failed", comment: ""))
+			}
+			else if results.restoredPurchases.count > 0 {
+				for restoredPurchase in results.restoredPurchases {
+					UserDefaults.standard.set(true, forKey: restoredPurchase.productId)
+				}
+				if UserDefaults.standard.bool(forKey: self.purchaseId) {
+					self.unlock()
+				}
+				self.showSimpleDialog(title: NSLocalizedString("Restore Succeeded", comment: ""))
+			}
+			else {
+				self.showSimpleDialog(title: NSLocalizedString("Nothing to Restore", comment: ""))
+			}
+		}
 	}
 	
 	
@@ -33,8 +61,10 @@ class ThemeDetailViewController: UIViewController{
         //Show theme image
 		imageView.image = ThemeController.getPreview(themeId: themeId)
 		
+		//set purchaseId
+		purchaseId = ThemeController.getThemePurchaseId(themeId: themeId)
+		
 		//According to the purchase situation, set the ability of buttons
-		let purchaseId = ThemeController.getThemePurchaseId(themeId: themeId)
 		if purchaseId == "" {
 			//free theme
 			btnPurchase.isEnabled = false
@@ -77,6 +107,19 @@ class ThemeDetailViewController: UIViewController{
 				print("Error")
 			}
 		}
+	}
+	
+	func unlock() {
+		btnApply.isEnabled = true
+		btnPurchase.isEnabled = false
+		btnRestore.isEnabled = false
+	}
+	
+	func showSimpleDialog(title: String) {
+		let alertController = UIAlertController(title: title, message: "", preferredStyle: .alert)
+		let alertAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil)
+		alertController.addAction(alertAction)
+		self.present(alertController, animated: true, completion: nil)
 	}
 	
     /*

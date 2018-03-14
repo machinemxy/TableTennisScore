@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 						SwiftyStoreKit.finishTransaction(purchase.transaction)
 					}
 					// Unlock content
-					print(purchase.productId)
+					UserDefaults.standard.set(true, forKey: purchase.productId)
 				case .failed, .purchasing, .deferred:
 					break // do nothing
 				}
