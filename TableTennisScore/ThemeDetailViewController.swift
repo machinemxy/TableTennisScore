@@ -96,7 +96,7 @@ class ThemeDetailViewController: UIViewController{
 	func setPrice(purchaseId: String) {
 		SwiftyStoreKit.retrieveProductsInfo([purchaseId]) { result in
 			if let product = result.retrievedProducts.first {
-				var purchaseTitle = NSLocalizedString("Purchase for @", comment: "")
+				var purchaseTitle = NSLocalizedString("Unlock all themes by @", comment: "")
 				let priceString = product.localizedPrice!
 				purchaseTitle = purchaseTitle.replacingOccurrences(of: "@", with: priceString)
 				self.btnPurchase.setTitle(purchaseTitle, for: .normal)

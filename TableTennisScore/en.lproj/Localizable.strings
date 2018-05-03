@@ -7,12 +7,18 @@
 */
 "Game Set" = "Game Set";
 "OK" = "OK";
-"Default" = "Default";
-"Dark" = "Dark";
-"Spring Festival" = "Spring Festival";
-"Purchase for @" = "Purchase for @";
+"Unlock all themes by @" = "Unlock all themes by @";
 "Purchase Succeeded" = "Purchase Succeeded";
 "Purchase Failed" = "Purchase Failed";
 "Restore Succeeded" = "Restore Succeeded";
 "Restore Failed" = "Restore Failed";
 "Nothing to Restore" = "Nothing to Restore";
+"Free" = "Free";
+"Charged" = "Charged";
+
+//theme name
+"Default" = "Default";
+"Dark" = "Dark";
+"Table Tennis Table" = "Table Tennis Table";
+"Spring Festival" = "Spring Festival";
+"Soccer Field" = "Soccer Field";

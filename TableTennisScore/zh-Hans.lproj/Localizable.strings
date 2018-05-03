@@ -7,12 +7,18 @@
 */
 "Game Set" = "本局结束";
 "OK" = "是";
-"Default" = "默认";
-"Dark" = "黑暗";
-"Spring Festival" = "春节";
-"Purchase for @" = "以@的价格购入";
+"Unlock all themes by @" = "以@的价格解锁全部主题";
 "Purchase Succeeded" = "购入成功";
 "Purchase Failed" = "购入失败";
 "Restore Succeeded" = "恢复成功";
 "Restore Failed" = "恢复失败";
 "Nothing to Restore" = "无可恢复之物";
+"Free" = "免费";
+"Charged" = "收费";
+
+//theme name
+"Default" = "默认";
+"Dark" = "黑暗";
+"Table Tennis Table" = "乒乓桌面";
+"Spring Festival" = "春节";
+"Soccer Field" = "足球场";

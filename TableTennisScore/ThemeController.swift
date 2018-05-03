@@ -9,7 +9,8 @@
 import UIKit
 
 struct ThemeController {
-	static let rowCount = 3
+	static let freeCount = 3
+	static let chargedCount = 2
 	
 	static func getTheme(themeId: Int) -> Theme {
 		return Theme(themeId: themeId)
@@ -20,7 +21,11 @@ struct ThemeController {
 		case 1:
 			return NSLocalizedString("Dark", comment: "")
 		case 2:
+			return NSLocalizedString("Table Tennis Table", comment: "")
+		case 3:
 			return NSLocalizedString("Spring Festival", comment: "")
+		case 4:
+			return NSLocalizedString("Soccer Field", comment: "")
 		default:
 			return NSLocalizedString("Default", comment: "")
 		}
@@ -31,7 +36,11 @@ struct ThemeController {
 		case 1:
 			return #imageLiteral(resourceName: "theme-dark")
 		case 2:
+			return #imageLiteral(resourceName: "theme-table")
+		case 3:
 			return #imageLiteral(resourceName: "theme-spring")
+		case 4:
+			return #imageLiteral(resourceName: "theme-soccer")
 		default:
 			return #imageLiteral(resourceName: "theme-default")
 		}
@@ -39,7 +48,7 @@ struct ThemeController {
 	
 	static func getThemePurchaseId(themeId: Int) -> String {
 		switch themeId {
-		case 2:
+		case 3, 4:
 			return "theme1"
 		default:
 			return ""
