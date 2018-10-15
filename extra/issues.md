@@ -1,2 +1,0 @@
-- add credit to the app store introduction page
-- mark free or charged theme in the theme table view
