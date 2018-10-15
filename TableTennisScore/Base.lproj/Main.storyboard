@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,7 +25,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="189.5" height="320"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxw-f7-ZLY">
-                                                <rect key="frame" x="5" y="64" width="180" height="192"/>
+                                                <rect key="frame" x="4.5" y="64" width="180" height="192"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="150"/>
                                                 <state key="normal" title="99"/>
                                                 <connections>
@@ -33,7 +33,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Serve" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7A-cH-cx5">
-                                                <rect key="frame" x="70" y="264" width="50" height="24"/>
+                                                <rect key="frame" x="69.5" y="264" width="50" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -56,7 +56,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="94.5" height="160"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rjm-r7-ImT">
-                                                                <rect key="frame" x="17" y="14.5" width="60" height="132"/>
+                                                                <rect key="frame" x="17" y="14" width="60" height="132"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="100"/>
                                                                 <state key="normal" title="9"/>
                                                                 <connections>
@@ -74,7 +74,7 @@
                                                         <rect key="frame" x="94.5" y="0.0" width="94.5" height="160"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBv-Vg-Dl3">
-                                                                <rect key="frame" x="17.5" y="14.5" width="60" height="132"/>
+                                                                <rect key="frame" x="17.5" y="14" width="60" height="132"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="100"/>
                                                                 <state key="normal" title="8"/>
                                                                 <connections>
@@ -93,7 +93,7 @@
                                                 <rect key="frame" x="0.0" y="160" width="189" height="160"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnc-UY-Rnx">
-                                                        <rect key="frame" x="61.5" y="8" width="65" height="36"/>
+                                                        <rect key="frame" x="62" y="8" width="65" height="36"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <state key="normal" title="Rewind">
                                                             <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -103,7 +103,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ItP-PC-VTK">
-                                                        <rect key="frame" x="69" y="96" width="50" height="36"/>
+                                                        <rect key="frame" x="69.5" y="96" width="50" height="36"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <state key="normal" title="Reset">
                                                             <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -113,7 +113,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8F-zp-Utg">
-                                                        <rect key="frame" x="39" y="52" width="112" height="36"/>
+                                                        <rect key="frame" x="38.5" y="52" width="112" height="36"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <state key="normal" title="Change Side"/>
                                                         <connections>
@@ -150,7 +150,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8X-xi-ieB">
-                                                <rect key="frame" x="149.5" y="8" width="32" height="32"/>
+                                                <rect key="frame" x="130.5" y="8" width="51" height="51"/>
                                                 <state key="normal" image="settings-blue"/>
                                                 <connections>
                                                     <segue destination="6GM-sd-baY" kind="show" id="AZb-fa-ImD"/>
@@ -203,9 +203,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="fc5-bM-jA8">
+                            <rect key="frame" x="0.0" y="0.0" width="568" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new" translatesAutoresizingMaskIntoConstraints="NO" id="Ox1-nf-uSv">
+                                    <rect key="frame" x="8" y="6" width="32" height="32"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="32" id="VxP-Rz-bQR"/>
+                                        <constraint firstAttribute="height" constant="32" id="oFY-GK-pEz"/>
+                                    </constraints>
+                                </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPZ-y8-lRL">
+                                    <rect key="frame" x="48" y="7" width="196" height="30"/>
+                                    <state key="normal" title="Pro Table Tennis Scoreboard"/>
+                                    <connections>
+                                        <action selector="linkClicked:" destination="NYa-bC-h3U" eventType="touchUpInside" id="hnf-oZ-jGB"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="Ox1-nf-uSv" firstAttribute="leading" secondItem="fc5-bM-jA8" secondAttribute="leading" constant="8" id="X7b-Dg-DYv"/>
+                                <constraint firstItem="fPZ-y8-lRL" firstAttribute="centerY" secondItem="fc5-bM-jA8" secondAttribute="centerY" id="XHW-oU-BTj"/>
+                                <constraint firstItem="fPZ-y8-lRL" firstAttribute="leading" secondItem="Ox1-nf-uSv" secondAttribute="trailing" constant="8" id="Zyt-dd-jcm"/>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fPZ-y8-lRL" secondAttribute="trailing" id="mRI-Pr-Pyu"/>
+                                <constraint firstItem="Ox1-nf-uSv" firstAttribute="centerY" secondItem="fc5-bM-jA8" secondAttribute="centerY" id="mdu-Kd-PUM"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="themeCell" textLabel="piD-VF-Ecc" style="IBUITableViewCellStyleDefault" id="yu9-On-4x4">
-                                <rect key="frame" x="0.0" y="55.5" width="568" height="44"/>
+                                <rect key="frame" x="0.0" y="99.5" width="568" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yu9-On-4x4" id="BsR-UO-DIz">
                                     <rect key="frame" x="0.0" y="0.0" width="568" height="43.5"/>
@@ -304,7 +332,7 @@
                                                         <rect key="frame" x="0.0" y="192" width="284" height="96"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WfH-D1-vJN">
-                                                                <rect key="frame" x="116" y="30" width="51" height="36"/>
+                                                                <rect key="frame" x="116.5" y="30" width="51" height="36"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                 <state key="normal" title="Apply"/>
                                                                 <connections>
@@ -364,7 +392,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="settings-blue" width="32" height="32"/>
+        <image name="new" width="51.200000762939453" height="51.200000762939453"/>
+        <image name="settings-blue" width="51.200000762939453" height="51.200000762939453"/>
         <image name="theme-default" width="1136" height="640"/>
     </resources>
 </document>
