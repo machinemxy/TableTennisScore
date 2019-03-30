@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 					}
 					// Unlock content
 					UserDefaults.standard.set(true, forKey: purchase.productId)
-				case .failed, .purchasing, .deferred:
+				default:
 					break // do nothing
 				}
 			}
