@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_0" orientation="landscape">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="landscape" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -150,7 +148,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8X-xi-ieB">
-                                                <rect key="frame" x="130.5" y="8" width="51" height="51"/>
+                                                <rect key="frame" x="149.5" y="8" width="32" height="32"/>
                                                 <state key="normal" image="settings-blue"/>
                                                 <connections>
                                                     <segue destination="6GM-sd-baY" kind="show" id="AZb-fa-ImD"/>
@@ -222,7 +220,7 @@
                                     </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstItem="Ox1-nf-uSv" firstAttribute="leading" secondItem="fc5-bM-jA8" secondAttribute="leading" constant="8" id="X7b-Dg-DYv"/>
                                 <constraint firstItem="fPZ-y8-lRL" firstAttribute="centerY" secondItem="fc5-bM-jA8" secondAttribute="centerY" id="XHW-oU-BTj"/>
@@ -233,7 +231,7 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="themeCell" textLabel="piD-VF-Ecc" style="IBUITableViewCellStyleDefault" id="yu9-On-4x4">
-                                <rect key="frame" x="0.0" y="99.5" width="568" height="44"/>
+                                <rect key="frame" x="0.0" y="99.5" width="568" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yu9-On-4x4" id="BsR-UO-DIz">
                                     <rect key="frame" x="0.0" y="0.0" width="568" height="43.5"/>
@@ -304,7 +302,7 @@
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
                                                             <constraint firstItem="pYj-4w-Tkt" firstAttribute="centerX" secondItem="pc5-wj-JJo" secondAttribute="centerX" id="TzM-Rd-79R"/>
                                                             <constraint firstAttribute="bottom" secondItem="pYj-4w-Tkt" secondAttribute="bottom" constant="8" id="UnS-xe-Qvd"/>
@@ -322,7 +320,7 @@
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
                                                             <constraint firstItem="GVA-en-Rx9" firstAttribute="centerX" secondItem="ma4-eF-5l1" secondAttribute="centerX" id="oLf-ro-TpP"/>
                                                             <constraint firstItem="GVA-en-Rx9" firstAttribute="top" secondItem="ma4-eF-5l1" secondAttribute="top" constant="8" id="uV8-sA-Tdi"/>
@@ -340,7 +338,7 @@
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
                                                             <constraint firstItem="WfH-D1-vJN" firstAttribute="centerX" secondItem="6tB-gB-Z0j" secondAttribute="centerX" id="R4Z-U2-5pR"/>
                                                             <constraint firstItem="WfH-D1-vJN" firstAttribute="centerY" secondItem="6tB-gB-Z0j" secondAttribute="centerY" id="cHj-xW-Aax"/>
@@ -353,7 +351,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="F8h-eb-KFA" firstAttribute="top" secondItem="NVQ-1s-ip6" secondAttribute="top" id="COx-mX-0Du"/>
                             <constraint firstItem="F8h-eb-KFA" firstAttribute="trailing" secondItem="NVQ-1s-ip6" secondAttribute="trailing" id="SX6-mi-wlO"/>
@@ -392,8 +390,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="new" width="51.200000762939453" height="51.200000762939453"/>
-        <image name="settings-blue" width="51.200000762939453" height="51.200000762939453"/>
+        <image name="new" width="32" height="32"/>
+        <image name="settings-blue" width="32" height="32"/>
         <image name="theme-default" width="1136" height="640"/>
     </resources>
 </document>
