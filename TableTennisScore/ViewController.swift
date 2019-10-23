@@ -96,11 +96,20 @@ class ViewController: UIViewController {
 		//Save the theme user selected
 		let themeDetailViewController = segue.source as! ThemeDetailViewController
 		UserDefaults.standard.set(themeDetailViewController.themeId, forKey: "themeId")
+        
+        //Set theme
+        let theme = ThemeController.getTheme(themeId: themeDetailViewController.themeId)
+        setTheme(theme: theme)
 	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+        //Set theme
+        let themeId = UserDefaults.standard.integer(forKey: "themeId")
+        let theme = ThemeController.getTheme(themeId: themeId)
+        setTheme(theme: theme)
+        
 		//Initialize the view
 		refresh()
 	}
@@ -171,14 +180,6 @@ class ViewController: UIViewController {
 			players.1.serveFirst = false
 			players.1.remainServe = 0
 		}
-	}
-	
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
-		
-		let themeId = UserDefaults.standard.integer(forKey: "themeId")
-		let theme = ThemeController.getTheme(themeId: themeId)
-		setTheme(theme: theme)
 	}
 	
 	func setTheme(theme: Theme) {
