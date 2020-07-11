@@ -200,3 +200,35 @@ class ViewController: UIViewController {
 	}
 }
 
+#if targetEnvironment(macCatalyst)
+extension ViewController: NSTouchBarDelegate {
+    override func makeTouchBar() -> NSTouchBar? {
+        let touchBar = NSTouchBar()
+        touchBar.delegate = self
+        touchBar.defaultItemIdentifiers = [.addLeft, .addRight, .rewind, .exchange, .reset]
+        return touchBar
+    }
+    
+    func touchBar(_ touchBar: NSTouchBar, makeItemForIdentifier identifier: NSTouchBarItem.Identifier) -> NSTouchBarItem? {
+        switch identifier {
+        case .addLeft:
+            let item = NSButtonTouchBarItem(identifier: identifier, title: NSLocalizedString("Left+1", comment: ""), target: self, action: #selector(addScoreLeft))
+            return item
+        case .addRight:
+            let item = NSButtonTouchBarItem(identifier: identifier, title: NSLocalizedString("Right+1", comment: ""), target: self, action: #selector(addScoreRight))
+            return item
+        case .rewind:
+            let item = NSButtonTouchBarItem(identifier: identifier, title: NSLocalizedString("Rewind", comment: ""), target: self, action: #selector(rewind))
+            return item
+        case .exchange:
+            let item = NSButtonTouchBarItem(identifier: identifier, title: NSLocalizedString("Change Side", comment: ""), target: self, action: #selector(changeSide))
+            return item
+        case .reset:
+            let item = NSButtonTouchBarItem(identifier: identifier, title: NSLocalizedString("Reset", comment: ""), target: self, action: #selector(restartMatch))
+            return item
+        default:
+            return nil
+        }
+    }
+}
+#endif
