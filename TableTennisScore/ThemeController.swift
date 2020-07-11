@@ -9,8 +9,7 @@
 import UIKit
 
 struct ThemeController {
-	static let freeCount = 3
-	static let chargedCount = 2
+	static let freeCount = 5
 	
 	static func getTheme(themeId: Int) -> Theme {
 		return Theme(themeId: themeId)
@@ -43,15 +42,6 @@ struct ThemeController {
 			return #imageLiteral(resourceName: "theme-soccer")
 		default:
 			return #imageLiteral(resourceName: "theme-default")
-		}
-	}
-	
-	static func getThemePurchaseId(themeId: Int) -> String {
-		switch themeId {
-		case 3, 4:
-			return "theme1"
-		default:
-			return ""
 		}
 	}
 }

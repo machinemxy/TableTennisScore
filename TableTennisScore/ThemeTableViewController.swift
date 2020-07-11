@@ -28,25 +28,12 @@ class ThemeTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		if section == 0 {
-			return ThemeController.freeCount
-		} else {
-			return ThemeController.chargedCount
-		}
-		
+		return ThemeController.freeCount
     }
-	
-	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-		if section == 0 {
-			return NSLocalizedString("Free", comment: "")
-		} else {
-			return NSLocalizedString("Charged", comment: "")
-		}
-	}
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "themeCell", for: indexPath)
@@ -65,7 +52,7 @@ class ThemeTableViewController: UITableViewController {
 		
 		//Preparation work before segue to ThemeDetailView
 		let indexPath = tableView.indexPathForSelectedRow!
-		let themeId = indexPath.row + indexPath.section * ThemeController.freeCount
+		let themeId = indexPath.row
 		
 		let themeDetailViewController = segue.destination as! ThemeDetailViewController
 		themeDetailViewController.themeId = themeId

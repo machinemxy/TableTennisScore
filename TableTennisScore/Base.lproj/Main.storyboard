@@ -284,68 +284,33 @@
                                         <rect key="frame" x="0.0" y="0.0" width="362" height="322"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="nBO-Da-BHb">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="o1y-yj-bh5">
                                         <rect key="frame" x="362" y="0.0" width="362" height="322"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mDX-CG-ACn">
-                                                <rect key="frame" x="0.0" y="0.0" width="362" height="322"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All the themes are free now." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="php-n8-vmg">
+                                                <rect key="frame" x="0.0" y="0.0" width="362" height="161"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aig-xB-DYt">
+                                                <rect key="frame" x="0.0" y="161" width="362" height="161"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pc5-wj-JJo">
-                                                        <rect key="frame" x="0.0" y="0.0" width="362" height="107.33333333333333"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pYj-4w-Tkt">
-                                                                <rect key="frame" x="99.666666666666686" y="63.333333333333329" width="163" height="36"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                                <state key="normal" title="Unlock All Themes"/>
-                                                                <connections>
-                                                                    <action selector="purchaseClicked:" destination="pB9-g0-dAx" eventType="touchUpInside" id="APv-cl-NmA"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                        <constraints>
-                                                            <constraint firstItem="pYj-4w-Tkt" firstAttribute="centerX" secondItem="pc5-wj-JJo" secondAttribute="centerX" id="TzM-Rd-79R"/>
-                                                            <constraint firstAttribute="bottom" secondItem="pYj-4w-Tkt" secondAttribute="bottom" constant="8" id="UnS-xe-Qvd"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ma4-eF-5l1">
-                                                        <rect key="frame" x="0.0" y="107.33333333333334" width="362" height="107.33333333333334"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GVA-en-Rx9" userLabel="Restore Purchases">
-                                                                <rect key="frame" x="100" y="8" width="162" height="36"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                                <state key="normal" title="Restore Purchases"/>
-                                                                <connections>
-                                                                    <action selector="restoreClicked:" destination="pB9-g0-dAx" eventType="touchUpInside" id="nmg-wC-zco"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                        <constraints>
-                                                            <constraint firstItem="GVA-en-Rx9" firstAttribute="centerX" secondItem="ma4-eF-5l1" secondAttribute="centerX" id="oLf-ro-TpP"/>
-                                                            <constraint firstItem="GVA-en-Rx9" firstAttribute="top" secondItem="ma4-eF-5l1" secondAttribute="top" constant="8" id="uV8-sA-Tdi"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6tB-gB-Z0j">
-                                                        <rect key="frame" x="0.0" y="214.66666666666666" width="362" height="107.33333333333334"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WfH-D1-vJN">
-                                                                <rect key="frame" x="155.66666666666663" y="35.666666666666657" width="51" height="36"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                                <state key="normal" title="Apply"/>
-                                                                <connections>
-                                                                    <segue destination="AJa-Fi-sVD" kind="unwind" identifier="applySegue" unwindAction="unwindFromSettingWithSegue:" id="P3p-GK-Rvu"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                        <constraints>
-                                                            <constraint firstItem="WfH-D1-vJN" firstAttribute="centerX" secondItem="6tB-gB-Z0j" secondAttribute="centerX" id="R4Z-U2-5pR"/>
-                                                            <constraint firstItem="WfH-D1-vJN" firstAttribute="centerY" secondItem="6tB-gB-Z0j" secondAttribute="centerY" id="cHj-xW-Aax"/>
-                                                        </constraints>
-                                                    </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WfH-D1-vJN">
+                                                        <rect key="frame" x="155.66666666666663" y="62.666666666666657" width="51" height="36"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <state key="normal" title="Apply"/>
+                                                        <connections>
+                                                            <segue destination="AJa-Fi-sVD" kind="unwind" identifier="applySegue" unwindAction="unwindFromSettingWithSegue:" id="P3p-GK-Rvu"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
-                                            </stackView>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="WfH-D1-vJN" firstAttribute="centerY" secondItem="Aig-xB-DYt" secondAttribute="centerY" id="BmQ-FX-dUG"/>
+                                                    <constraint firstItem="WfH-D1-vJN" firstAttribute="centerX" secondItem="Aig-xB-DYt" secondAttribute="centerX" id="K1c-Bu-6Hp"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -362,8 +327,6 @@
                     </view>
                     <connections>
                         <outlet property="btnApply" destination="WfH-D1-vJN" id="5LU-s9-8Z2"/>
-                        <outlet property="btnPurchase" destination="pYj-4w-Tkt" id="K7q-js-hSZ"/>
-                        <outlet property="btnRestore" destination="GVA-en-Rx9" id="gtm-yQ-HMi"/>
                         <outlet property="imageView" destination="mHe-Zx-5eT" id="dOP-Zd-tde"/>
                     </connections>
                 </viewController>

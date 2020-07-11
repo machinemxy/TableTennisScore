@@ -7,14 +7,6 @@
 */
 "Game Set" = "ゲームセット";
 "OK" = "はい";
-"Unlock all themes by @" = "@で全てテーマ解禁";
-"Purchase Succeeded" = "購入成功";
-"Purchase Failed" = "購入失敗";
-"Restore Succeeded" = "復元成功";
-"Restore Failed" = "復元失敗";
-"Nothing to Restore" = "復元できるものはありません";
-"Free" = "無料";
-"Charged" = "有料";
 
 //theme name
 "Default" = "デフォルト";

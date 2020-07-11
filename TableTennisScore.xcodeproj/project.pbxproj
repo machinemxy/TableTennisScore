@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		223DE67720580A700085AE4E /* SwiftyStoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223DE67620580A700085AE4E /* SwiftyStoreKit.framework */; };
 		22658FBB202FD9010061B220 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22658FBD202FD9010061B220 /* Localizable.strings */; };
 		22658FCA202FE4570061B220 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22658FCC202FE4570061B220 /* InfoPlist.strings */; };
 		2292E18D1FEBE4C5001524FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2292E18C1FEBE4C5001524FB /* AppDelegate.swift */; };
@@ -15,7 +14,6 @@
 		2292E1921FEBE4C5001524FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2292E1901FEBE4C5001524FB /* Main.storyboard */; };
 		2292E1971FEBE4C5001524FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2292E1951FEBE4C5001524FB /* LaunchScreen.storyboard */; };
 		2292E19F1FEFBC7F001524FB /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2292E19E1FEFBC7F001524FB /* Player.swift */; };
-		22EBE96D204588A000417239 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EBE96C204588A000417239 /* StoreKit.framework */; };
 		22F6A01120426C0D0063FDC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22F6A01020426C0D0063FDC6 /* Assets.xcassets */; };
 		22F6A01320426F130063FDC6 /* ThemeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F6A01220426F130063FDC6 /* ThemeTableViewController.swift */; };
 		22F6A018204270D60063FDC6 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F6A017204270D60063FDC6 /* Theme.swift */; };
@@ -24,7 +22,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		223DE67620580A700085AE4E /* SwiftyStoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyStoreKit.framework; path = Carthage/Build/iOS/SwiftyStoreKit.framework; sourceTree = "<group>"; };
 		22658FB3202FCFDB0061B220 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		22658FB4202FD7AA0061B220 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		22658FBE202FD9050061B220 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -41,7 +38,6 @@
 		2292E1961FEBE4C5001524FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2292E1981FEBE4C5001524FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2292E19E1FEFBC7F001524FB /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		22EBE96C204588A000417239 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		22F6A01020426C0D0063FDC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22F6A01220426F130063FDC6 /* ThemeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeTableViewController.swift; sourceTree = "<group>"; };
 		22F6A017204270D60063FDC6 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -54,8 +50,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				223DE67720580A700085AE4E /* SwiftyStoreKit.framework in Frameworks */,
-				22EBE96D204588A000417239 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,8 +96,6 @@
 		22EBE96B204588A000417239 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				223DE67620580A700085AE4E /* SwiftyStoreKit.framework */,
-				22EBE96C204588A000417239 /* StoreKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -193,10 +185,8 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)//Carthage/Build/iOS/SwiftyStoreKit.framework",
 			);
 			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftyStoreKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
