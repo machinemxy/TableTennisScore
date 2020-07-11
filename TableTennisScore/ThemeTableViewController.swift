@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class ThemeTableViewController: UITableViewController {
 	
@@ -59,8 +60,16 @@ class ThemeTableViewController: UITableViewController {
 	}
     
     @IBAction func linkClicked(_ sender: Any) {
-        if let url = URL(string: "https://itunes.apple.com/us/app/pro-table-tennis-scoreboard/id1438386246?mt=8") {
-            UIApplication.shared.open(url, options: [:])
+        let urlStr: String
+        #if targetEnvironment(macCatalyst)
+        urlStr = "https://apps.apple.com/jp/app/pro-table-tennis-scoreboard/id1484810163?mt=12"
+        #else
+        urlStr = "https://itunes.apple.com/us/app/pro-table-tennis-scoreboard/id1438386246?mt=8"
+        #endif
+        
+        if let url = URL(string: urlStr) {
+            let safariVC = SFSafariViewController(url: url)
+            present(safariVC, animated: true)
         }
     }
 }
