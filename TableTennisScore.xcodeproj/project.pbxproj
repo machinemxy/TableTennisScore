@@ -3,26 +3,35 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2257826D253ACF3B00E728E4 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2257826C253ACF3B00E728E4 /* RxSwift */; };
+		2257826F253ACF3B00E728E4 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 2257826E253ACF3B00E728E4 /* RxCocoa */; };
+		2257827E253AD45200E728E4 /* HistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2257827D253AD45200E728E4 /* HistoryManager.swift */; };
+		22578281253AD94400E728E4 /* Scoreboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22578280253AD94400E728E4 /* Scoreboard.swift */; };
+		22578284253B0BB500E728E4 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22578283253B0BB500E728E4 /* History.swift */; };
+		2257828A253B32A300E728E4 /* Side.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22578289253B32A300E728E4 /* Side.swift */; };
 		22658FBB202FD9010061B220 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22658FBD202FD9010061B220 /* Localizable.strings */; };
 		22658FCA202FE4570061B220 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22658FCC202FE4570061B220 /* InfoPlist.strings */; };
 		2292E18D1FEBE4C5001524FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2292E18C1FEBE4C5001524FB /* AppDelegate.swift */; };
 		2292E18F1FEBE4C5001524FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2292E18E1FEBE4C5001524FB /* ViewController.swift */; };
 		2292E1921FEBE4C5001524FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2292E1901FEBE4C5001524FB /* Main.storyboard */; };
 		2292E1971FEBE4C5001524FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2292E1951FEBE4C5001524FB /* LaunchScreen.storyboard */; };
-		2292E19F1FEFBC7F001524FB /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2292E19E1FEFBC7F001524FB /* Player.swift */; };
 		22C8C9F524B9A1010004746C /* TouchBarExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8C9F424B9A1010004746C /* TouchBarExt.swift */; };
 		22F6A01120426C0D0063FDC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22F6A01020426C0D0063FDC6 /* Assets.xcassets */; };
 		22F6A01320426F130063FDC6 /* ThemeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F6A01220426F130063FDC6 /* ThemeTableViewController.swift */; };
 		22F6A018204270D60063FDC6 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F6A017204270D60063FDC6 /* Theme.swift */; };
-		22F6A01A20427F5D0063FDC6 /* ThemeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F6A01920427F5D0063FDC6 /* ThemeController.swift */; };
+		22F6A01A20427F5D0063FDC6 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F6A01920427F5D0063FDC6 /* ThemeManager.swift */; };
 		22F6A01C204285BC0063FDC6 /* ThemeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F6A01B204285BC0063FDC6 /* ThemeDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2257827D253AD45200E728E4 /* HistoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryManager.swift; sourceTree = "<group>"; };
+		22578280253AD94400E728E4 /* Scoreboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scoreboard.swift; sourceTree = "<group>"; };
+		22578283253B0BB500E728E4 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		22578289253B32A300E728E4 /* Side.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Side.swift; sourceTree = "<group>"; };
 		22658FB3202FCFDB0061B220 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		22658FB4202FD7AA0061B220 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		22658FBE202FD9050061B220 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -38,13 +47,12 @@
 		2292E1911FEBE4C5001524FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2292E1961FEBE4C5001524FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2292E1981FEBE4C5001524FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2292E19E1FEFBC7F001524FB /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		22C8C9F324B991930004746C /* TableTennisScore.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TableTennisScore.entitlements; sourceTree = "<group>"; };
 		22C8C9F424B9A1010004746C /* TouchBarExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchBarExt.swift; sourceTree = "<group>"; };
 		22F6A01020426C0D0063FDC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22F6A01220426F130063FDC6 /* ThemeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeTableViewController.swift; sourceTree = "<group>"; };
 		22F6A017204270D60063FDC6 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
-		22F6A01920427F5D0063FDC6 /* ThemeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeController.swift; sourceTree = "<group>"; };
+		22F6A01920427F5D0063FDC6 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		22F6A01B204285BC0063FDC6 /* ThemeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -53,12 +61,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2257826F253ACF3B00E728E4 /* RxCocoa in Frameworks */,
+				2257826D253ACF3B00E728E4 /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22578271253ACFC500E728E4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2292E18E1FEBE4C5001524FB /* ViewController.swift */,
+				22F6A01B204285BC0063FDC6 /* ThemeDetailViewController.swift */,
+				22F6A01220426F130063FDC6 /* ThemeTableViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		22578272253ACFF000E728E4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				22578280253AD94400E728E4 /* Scoreboard.swift */,
+				2257827D253AD45200E728E4 /* HistoryManager.swift */,
+				22578283253B0BB500E728E4 /* History.swift */,
+				22F6A017204270D60063FDC6 /* Theme.swift */,
+				22F6A01920427F5D0063FDC6 /* ThemeManager.swift */,
+				22578289253B32A300E728E4 /* Side.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		22578273253AD00000E728E4 /* Extra */ = {
+			isa = PBXGroup;
+			children = (
+				22C8C9F424B9A1010004746C /* TouchBarExt.swift */,
+			);
+			path = Extra;
+			sourceTree = "<group>";
+		};
 		2292E1801FEBE4C5001524FB = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +120,9 @@
 		2292E18B1FEBE4C5001524FB /* TableTennisScore */ = {
 			isa = PBXGroup;
 			children = (
+				22578273253AD00000E728E4 /* Extra */,
+				22578272253ACFF000E728E4 /* Models */,
+				22578271253ACFC500E728E4 /* ViewControllers */,
 				22C8C9F324B991930004746C /* TableTennisScore.entitlements */,
 				22F6A01020426C0D0063FDC6 /* Assets.xcassets */,
 				2292E18C1FEBE4C5001524FB /* AppDelegate.swift */,
@@ -87,13 +131,6 @@
 				2292E1981FEBE4C5001524FB /* Info.plist */,
 				22658FBD202FD9010061B220 /* Localizable.strings */,
 				22658FCC202FE4570061B220 /* InfoPlist.strings */,
-				2292E18E1FEBE4C5001524FB /* ViewController.swift */,
-				22F6A01220426F130063FDC6 /* ThemeTableViewController.swift */,
-				22F6A01B204285BC0063FDC6 /* ThemeDetailViewController.swift */,
-				2292E19E1FEFBC7F001524FB /* Player.swift */,
-				22F6A017204270D60063FDC6 /* Theme.swift */,
-				22F6A01920427F5D0063FDC6 /* ThemeController.swift */,
-				22C8C9F424B9A1010004746C /* TouchBarExt.swift */,
 			);
 			path = TableTennisScore;
 			sourceTree = "<group>";
@@ -121,6 +158,10 @@
 			dependencies = (
 			);
 			name = TableTennisScore;
+			packageProductDependencies = (
+				2257826C253ACF3B00E728E4 /* RxSwift */,
+				2257826E253ACF3B00E728E4 /* RxCocoa */,
+			);
 			productName = TableTennisScore;
 			productReference = 2292E1891FEBE4C5001524FB /* TableTennisScore.app */;
 			productType = "com.apple.product-type.application";
@@ -158,6 +199,9 @@
 				"zh-Hans",
 			);
 			mainGroup = 2292E1801FEBE4C5001524FB;
+			packageReferences = (
+				2257826B253ACF3B00E728E4 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = 2292E18A1FEBE4C5001524FB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -187,13 +231,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22F6A01A20427F5D0063FDC6 /* ThemeController.swift in Sources */,
+				22F6A01A20427F5D0063FDC6 /* ThemeManager.swift in Sources */,
 				22F6A01C204285BC0063FDC6 /* ThemeDetailViewController.swift in Sources */,
 				2292E18F1FEBE4C5001524FB /* ViewController.swift in Sources */,
-				2292E19F1FEFBC7F001524FB /* Player.swift in Sources */,
+				2257827E253AD45200E728E4 /* HistoryManager.swift in Sources */,
+				22578284253B0BB500E728E4 /* History.swift in Sources */,
+				2257828A253B32A300E728E4 /* Side.swift in Sources */,
 				22F6A018204270D60063FDC6 /* Theme.swift in Sources */,
 				22C8C9F524B9A1010004746C /* TouchBarExt.swift in Sources */,
 				2292E18D1FEBE4C5001524FB /* AppDelegate.swift in Sources */,
+				22578281253AD94400E728E4 /* Scoreboard.swift in Sources */,
 				22F6A01320426F130063FDC6 /* ThemeTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,7 +400,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -368,7 +416,10 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = TableTennisScore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.8;
 				PRODUCT_BUNDLE_IDENTIFIER = mxy.TableTennisScore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -388,7 +439,10 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = TableTennisScore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.8;
 				PRODUCT_BUNDLE_IDENTIFIER = mxy.TableTennisScore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -420,6 +474,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2257826B253ACF3B00E728E4 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = exactVersion;
+				version = "6.0.0-rc.1";
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2257826C253ACF3B00E728E4 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2257826B253ACF3B00E728E4 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		2257826E253ACF3B00E728E4 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2257826B253ACF3B00E728E4 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2292E1811FEBE4C5001524FB /* Project object */;
 }

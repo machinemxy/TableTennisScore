@@ -1,5 +1,5 @@
 //
-//  ThemeRow.swift
+//  ThemeManager.swift
 //  TableTennisScore
 //
 //  Created by 马学渊 on 2018/02/25.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct ThemeController {
+struct ThemeManager {
 	static let freeCount = 5
 	
 	static func getTheme(themeId: Int) -> Theme {

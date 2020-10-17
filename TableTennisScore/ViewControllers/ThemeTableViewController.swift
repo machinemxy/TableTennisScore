@@ -33,15 +33,15 @@ class ThemeTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return ThemeController.freeCount
+		return ThemeManager.freeCount
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "themeCell", for: indexPath)
 		
-		let themeId = indexPath.row + indexPath.section * ThemeController.freeCount
+		let themeId = indexPath.row + indexPath.section * ThemeManager.freeCount
 		
-		cell.textLabel?.text = ThemeController.getThemeName(themeId: themeId)
+		cell.textLabel?.text = ThemeManager.getThemeName(themeId: themeId)
 
         return cell
     }

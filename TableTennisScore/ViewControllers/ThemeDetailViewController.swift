@@ -18,7 +18,7 @@ class ThemeDetailViewController: UIViewController{
         super.viewDidLoad()
 
         //Show theme image
-		imageView.image = ThemeController.getPreview(themeId: themeId)
+		imageView.image = ThemeManager.getPreview(themeId: themeId)
 		
     }
 }

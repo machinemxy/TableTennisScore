@@ -8,84 +8,124 @@
 
 import UIKit
 import StoreKit
+import RxSwift
+import RxCocoa
 
 class ViewController: UIViewController {
-	var players = (Player(serveFirst: true), Player(serveFirst: false))
-	var historyPlayers = (Player(serveFirst: true), Player(serveFirst: false))
+    private var sb = Scoreboard()
+    private var historyManager = HistoryManager()
+    private let disposeBag = DisposeBag()
 
 	@IBOutlet weak var scoreLeft: UIButton!
-	
 	@IBOutlet weak var scoreRight: UIButton!
-	
 	@IBOutlet weak var gameLeft: UIButton!
-	
 	@IBOutlet weak var gameRight: UIButton!
-	
 	@IBOutlet weak var serveLeft: UILabel!
-	
 	@IBOutlet weak var serveRight: UILabel!
-	
 	@IBOutlet weak var btnRewind: UIButton!
-	
 	@IBOutlet weak var btnChangeSide: UIButton!
-	
 	@IBOutlet weak var btnRestartMatch: UIButton!
-	
 	@IBOutlet weak var btnSetting: UIButton!
 	
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // set theme
+        let themeId = UserDefaults.standard.integer(forKey: "themeId")
+        let theme = ThemeManager.getTheme(themeId: themeId)
+        setTheme(theme: theme)
+        
+        setupRx()
+    }
+    
+    func setupRx() {
+        sb.scoreL
+            .asObservable()
+            .subscribe(onNext: { [unowned self] value in
+                scoreLeft.setTitle("\(value)", for: .normal)
+            })
+            .disposed(by: disposeBag)
+        
+        sb.scoreR
+            .asObservable()
+            .subscribe(onNext: { [unowned self] value in
+                scoreRight.setTitle("\(value)", for: .normal)
+            })
+            .disposed(by: disposeBag)
+        
+        sb.gameL
+            .asObservable()
+            .subscribe(onNext: { [unowned self] value in
+                gameLeft.setTitle("\(value)", for: .normal)
+            })
+            .disposed(by: disposeBag)
+        
+        sb.gameR
+            .asObservable()
+            .subscribe(onNext: { [unowned self] value in
+                gameRight.setTitle("\(value)", for: .normal)
+            })
+            .disposed(by: disposeBag)
+        
+        sb.serveL
+            .asObservable()
+            .subscribe(onNext: { [unowned self] value in
+                serveLeft.isHidden = value == 0
+            })
+            .disposed(by: disposeBag)
+        
+        sb.serveR
+            .asObservable()
+            .subscribe(onNext: { [unowned self] value in
+                serveRight.isHidden = value == 0
+            })
+            .disposed(by: disposeBag)
+    }
+    
 	@IBAction func rewind(_ sender: Any) {
-		players = historyPlayers
-		refresh()
+        if let history = historyManager.getLast() {
+            sb.accept(history)
+        }
 	}
 	
 	@IBAction func changeSide(_ sender: Any) {
-		backup()
-		let tempPlayer = players.0
-		players.0 = players.1
-		players.1 = tempPlayer
-		refresh()
+        backup()
+        sb.mirror()
 	}
 	
 	@IBAction func restartMatch(_ sender: Any) {
 		backup()
-		players = (Player(serveFirst: true), Player(serveFirst: false))
-		refresh()
+        sb.reset()
 	}
 	
 	@IBAction func addGameLeft(_ sender: Any) {
-		backup()
-		players.0.game += 1
-		refresh()
+        backup()
+        sb.gameL.accept(sb.gameL.value + 1)
 	}
 	
 	@IBAction func addGameRight(_ sender: Any) {
-		backup()
-		players.1.game += 1
-		refresh()
+        backup()
+        sb.gameR.accept(sb.gameR.value + 1)
 	}
 	
 	@IBAction func addScoreLeft(_ sender: Any) {
-		backup()
-		players.0.score += 1
-		changeServe()
-		refresh()
-		if(players.0.score >= 11 && players.0.score - players.1.score >= 2){
-			players.0.game += 1
-			resetForNextGame()
-			gameSet()
-		}
+        backup()
+        sb.scoreL.accept(sb.scoreL.value + 1)
+        if sb.isLWin() {
+            gameSet(gameWinner: .left)
+        } else {
+            processServeChange()
+        }
 	}
 	
 	@IBAction func addScoreRight(_ sender: Any) {
 		backup()
-		players.1.score += 1
-		changeServe()
-		refresh()
-		if(players.1.score >= 11 && players.1.score - players.0.score >= 2){
-			players.1.game += 1
-			resetForNextGame()
-			gameSet()
-		}
+        sb.scoreR.accept(sb.scoreR.value + 1)
+        if sb.isRWin() {
+            gameSet(gameWinner: .right)
+        } else {
+            processServeChange()
+        }
 	}
 	
 	@IBAction func unwindFromSetting(segue: UIStoryboardSegue) {
@@ -98,37 +138,18 @@ class ViewController: UIViewController {
 		UserDefaults.standard.set(themeDetailViewController.themeId, forKey: "themeId")
         
         //Set theme
-        let theme = ThemeController.getTheme(themeId: themeDetailViewController.themeId)
+        let theme = ThemeManager.getTheme(themeId: themeDetailViewController.themeId)
         setTheme(theme: theme)
 	}
+}
 	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		
-        //Set theme
-        let themeId = UserDefaults.standard.integer(forKey: "themeId")
-        let theme = ThemeController.getTheme(themeId: themeId)
-        setTheme(theme: theme)
-        
-		//Initialize the view
-		refresh()
-	}
-	
+private extension ViewController {
 	func backup(){
-		historyPlayers = players
+        historyManager.append(history: sb.toHistory())
 	}
 	
-	func refresh(){
-		gameLeft.setTitle("\(players.0.game)", for: .normal)
-		gameRight.setTitle("\(players.1.game)", for: .normal)
-		scoreLeft.setTitle("\(players.0.score)", for: .normal)
-		scoreRight.setTitle("\(players.1.score)", for: .normal)
-		serveLeft.isHidden = players.0.remainServe == 0
-		serveRight.isHidden = players.1.remainServe == 0
-	}
-	
-	func gameSet(){
-		//user use it every 10 time, he will be asked to rate and review
+    func gameSet(gameWinner: Side){
+		// user use it every 10 time, he will be asked to rate and review
 		var gamePlayed = UserDefaults.standard.integer(forKey: "gamePlayed")
 		gamePlayed += 1
 		UserDefaults.standard.set(gamePlayed, forKey: "gamePlayed")
@@ -136,51 +157,60 @@ class ViewController: UIViewController {
 			SKStoreReviewController.requestReview()
 		}
 		
+        // show alert
 		let alertController = UIAlertController(title: NSLocalizedString("Game Set", comment: ""), message: "", preferredStyle: .alert)
-		let alertAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: {(_: UIAlertAction) -> Void in self.refresh()})
+		let alertAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: { [unowned self] _ in
+            switch gameWinner {
+            case .left:
+                sb.gameL.accept(sb.gameL.value + 1)
+            case .right:
+                sb.gameR.accept(sb.gameR.value + 1)
+            }
+            
+            resetForNextGame()
+        })
 		alertController.addAction(alertAction)
 		self.present(alertController, animated: true, completion: nil)
 	}
+    
+    func resetForNextGame(){
+        sb.scoreL.accept(0)
+        sb.scoreR.accept(0)
+        switch sb.serveFirst {
+        case .left:
+            sb.serveFirst = .right
+            sb.serveL.accept(0)
+            sb.serveR.accept(2)
+        case .right:
+            sb.serveFirst = .left
+            sb.serveL.accept(2)
+            sb.serveR.accept(0)
+        }
+    }
 	
-	func changeServe(){
-		if(players.0.remainServe > 0){
-			//left player just served
-			players.0.remainServe -= 1
-			if(players.0.remainServe == 0){
-				players.1.remainServe = getServeCount()
-			}
-		}else{
-			//right player just served
-			players.1.remainServe -= 1
-			if(players.1.remainServe == 0){
-				players.0.remainServe = getServeCount()
-			}
-		}
+	func processServeChange(){
+        if sb.serveL.value > 0 {
+            sb.serveL.accept(sb.serveL.value - 1)
+            if sb.serveL.value == 0 {
+                sb.serveR.accept(getServeCount())
+            }
+        } else {
+            sb.serveR.accept(sb.serveR.value - 1)
+            if sb.serveR.value == 0 {
+                sb.serveL.accept(getServeCount())
+            }
+        }
 	}
 	
 	func getServeCount() -> Int{
-		if(players.0.score >= 10 && players.1.score >= 10){
+        if sb.scoreL.value >= 10 && sb.scoreR.value >= 10 {
 			return 1
-		}else{
+		} else {
 			return 2
 		}
 	}
 	
-	func resetForNextGame(){
-		players.0.score = 0
-		players.1.score = 0
-		if(players.0.serveFirst){
-			players.0.serveFirst = false
-			players.0.remainServe = 0
-			players.1.serveFirst = true
-			players.1.remainServe = 2
-		}else{
-			players.0.serveFirst = true
-			players.0.remainServe = 2
-			players.1.serveFirst = false
-			players.1.remainServe = 0
-		}
-	}
+	
 	
 	func setTheme(theme: Theme) {
 		view.backgroundColor = theme.backgroundColor
